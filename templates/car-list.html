@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% comment %}
+{% block titlepage %}Carros{% endblock titlepage %}
+{% endcomment %}
+
+{% block content %}
+<section>
+	<div class="container text-center">
+		<h1>Lista de Carros</h1>
+			{% for Veiculo in Carro %}
+			<div class="col-lg-4 col-sm-6">
+				<div class="card h-100">
+					<div class="card-body">
+						<h4 class="card-title">
+							<a href="#">{{ Veiculo.nome }}</a>
+						</h4>
+						<p class="card-text">
+							{{ Veiculo.placa }}
+						</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+</section>
+{% endblock content %}
