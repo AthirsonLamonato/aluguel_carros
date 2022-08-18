@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-shvrd-vv@1=fyrcq_wy+x90n)dmmff@%q5l!v#^j3vj@@56%me'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.gusgewehr.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,10 +130,10 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = '/var/cache/portal_analytics/static/'
+STATIC_ROOT = '/var/cache/aluguel_carros/static/'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/var/opt/portal_analytics/media/'
+MEDIA_ROOT = '/var/opt/aluguel_carros/media/'
 MEDIA_URL = '/media/'
 
 
