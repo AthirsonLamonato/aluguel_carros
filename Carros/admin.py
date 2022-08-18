@@ -6,6 +6,7 @@ class CarroAdmin(admin.ModelAdmin):
     list_display = ('placa', 'modelo', 'valor_locacao','status')
     search_fields= ('placa','modelo__modelo',)
     list_filter = ('status','modelo')
+    readonly_fields = ('status', )
 
     
 

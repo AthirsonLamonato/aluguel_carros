@@ -37,8 +37,17 @@ class Carro(models.Model):
 		('O', 'Ocupado'),
 		('L', 'Livre'),
 	)
-	status = models.CharField(max_length=1, default='L', editable=False)
+	status = models.CharField(max_length=1, default='L')
+
+	class Meta:
+		constraints = [
+            models.UniqueConstraint(fields=['placa'], name='unique_placa'),
+			models.UniqueConstraint(fields=['chassi'], name='unique_chassi'),
+			models.UniqueConstraint(fields=['renavam'], name='unique_renavam')
+        ]
 
 	def __str__(self):
 		identificacao = ' '.join(['[', str(self.placa), ']', str(self.modelo.marca), str(self.modelo.modelo)])
 		return identificacao
+
+	
