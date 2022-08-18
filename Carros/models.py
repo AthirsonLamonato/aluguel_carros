@@ -20,8 +20,6 @@ class Carro(models.Model):
 	cor = models.CharField(max_length=50, verbose_name="Cor do Veículo",help_text="Informe a cor")
 	ano = models.IntegerField(verbose_name="Ano do Veículo", help_text="Informe o ano")
 	qtd_portas = models.CharField(max_length=50, verbose_name="Quantidade de Portas", help_text="Informe a quantidade de portas")
-
-
 	combustivel_tipo = (
 			('DI', 'Diesel'),
 			('ET', 'Etanol'),
@@ -30,12 +28,16 @@ class Carro(models.Model):
 			('EN', 'Elétrico'),
 			('GN', 'Gás Natural Veicular'),
 	)
-
 	combustivel = models.CharField(choices=combustivel_tipo, max_length=2, verbose_name="Tipo de combustível", help_text="Informe o tipo de combustível")
 	chassi = models.CharField(max_length=50, verbose_name="Número do Chassi", help_text="Informe o número do chassi")
 	renavam = models.IntegerField(verbose_name="Renavam", help_text="Informe o renavam")
 	nr_hodometro = models.IntegerField(verbose_name="Número hodômetro", help_text="Informe o Número marcado pelo hodômetro")
 	valor_locacao = models.DecimalField(verbose_name="Valor de Locação", max_digits=19, decimal_places=2, help_text="Informe o valor")
+	status_options = (
+		('O', 'Ocupado'),
+		('L', 'Livre'),
+	)
+	status = models.CharField(max_length=1, default='L', editable=False)
 
 	def __str__(self):
 		identificacao = ' '.join(['[', str(self.placa), ']', str(self.modelo.marca), str(self.modelo.modelo)])
