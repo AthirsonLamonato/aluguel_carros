@@ -8,6 +8,7 @@ class CarroAdmin(admin.ModelAdmin):
     list_filter = ('status','modelo')
     readonly_fields = ('status', )
 
+
     
 
 admin.site.register(Carro, CarroAdmin)

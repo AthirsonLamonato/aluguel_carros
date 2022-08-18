@@ -3,12 +3,12 @@ from django.contrib import admin
 from .models import Locacao
 from Carros.models import Carro
 
-class LocacaoAdmin(admin.ModelAdmin):
+class LocacaoAdmin(admin.ModelAdmin):    
     list_display = ('cliente', 'carro', 'data_retirada','data_entrega_prevista', 'data_entrega' ,'status')
     search_fields= ('cliente__nome',)
     list_filter = ('carro', 'data_retirada','data_entrega_prevista', 'data_entrega' ,'status')
-
-    
+   
+    autocomplete_fields = ['cliente', 'carro']
     '''
     def get_form(self, request, obj=None, **kwargs):
         if obj:
