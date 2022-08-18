@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-shvrd-vv@1=fyrcq_wy+x90n)dmmff@%q5l!v#^j3vj@@56%me
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '.gusgewehr.com']
 
 
 # Application definition
