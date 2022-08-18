@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-shvrd-vv@1=fyrcq_wy+x90n)dmmff@%q5l!v#^j3vj@@56%me
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,6 +87,8 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = ( 'django.contrib.auth.models.AnonymousUser', )
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -107,12 +109,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -126,6 +131,9 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+        BASE_DIR 
+    ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
